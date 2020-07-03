@@ -3,9 +3,9 @@ import { ReactComponent as SvgLogo } from "../../assets/logo.svg";
 
 const Logo = () => {
   return (
-    <div className="uk-logo">
+    <a href="/" className="uk-logo">
       <SvgLogo />
-    </div>
+    </a>
   )
 }
 export default Logo

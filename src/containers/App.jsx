@@ -11,34 +11,24 @@ import Properties from "../components/sections/Properties"
 import Copyright from '../components/layout/Copyright'
 
 import properties from "../assets/stays.json"
+import SearchBar from '../components/basic/SearchBar';
 
-
+let cities = [];
+properties.forEach(property => {
+  if (!cities.includes(property.city)) {
+    cities.push(property.city)
+  }
+});
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      properties: [],
-      cities: [],
+      properties: properties,
       guests: 0,
-      city: '',
+      cities: cities,
+      city: cities[Math.floor(Math.random() * cities.length)],
     };
-  }
-
-  componentDidMount() {
-    this.setState({properties: properties})
-    let cities = [];
-    this.state.properties.forEach((property) => {
-      if (!cities.includes(property.city)) {
-        cities.push(property.city);
-      }
-    });
-    this.setState({cities: cities})
-    this.setState({
-      city: "Helsinki"
-    });
-
-  
   }
 
   onGuestChange = (event) => {
@@ -57,13 +47,7 @@ class App extends React.Component {
   };
 
   render() {
-    const { properties, guests, city } = this.state;
-    let cities = [];
-    properties.forEach((property) => {
-      if (!cities.includes(property.city)) {
-        cities.push(property.city);
-      }
-    });
+    const { properties, guests, cities, city } = this.state;
     let filteredProperties = guests
       ? properties.filter((property) => property.maxGuests >= guests)
       : properties;
@@ -82,6 +66,14 @@ class App extends React.Component {
           />
           <Main>
             <Section container="large">
+              <div className="uk-hidden@s">
+                <SearchBar
+                  cities={cities}
+                  city={city}
+                  searchChange={this.onSearchChange}
+                  cityChange={this.onCityChange}
+                />
+              </div>
               <div className="uk-flex uk-flex-bottom uk-flex-between uk-margin-bottom">
                 <h2 className="uk-margin-remove-bottom">Stays in Finland</h2>
                 {filteredProperties ? (
@@ -89,7 +81,7 @@ class App extends React.Component {
                     {filteredProperties.length < 12
                       ? filteredProperties.length
                       : "12+"}{" "}
-                    stays
+                    stay{filteredProperties.length === 1 ? '' : 's'}
                   </div>
                 ) : (
                   ""

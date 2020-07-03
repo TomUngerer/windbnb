@@ -21,7 +21,7 @@ const Navbar = props => {
           <div className="uk-navbar-left uk-margin-remove">
             <Logo />
           </div>
-          <div className="uk-navbar-right">
+          <div className="uk-navbar-right uk-visible@s">
             <div className="uk-navbar-item">
               <SearchBar {...props} />
             </div>
