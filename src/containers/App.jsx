@@ -36,6 +36,14 @@ class App extends React.Component {
 
   render() {
     const {properties, guests, city} = this.state
+    let cities = [];
+    properties.forEach(property => {
+      if (!cities.includes(property.city)) {
+        cities.push(property.city)
+      }
+    });
+    let filteredProperties = guests ? properties.filter(property => property.maxGuests >= guests) : properties
+    filteredProperties = city ? filteredProperties.filter(property => property.city === city) : filteredProperties
     return (
       <div className="App">
         <Seo title="Home" />
@@ -51,11 +59,11 @@ class App extends React.Component {
             <Section container="large">
               <div className="uk-flex uk-flex-bottom uk-flex-between uk-margin-bottom">
                 <h2 className="uk-margin-remove-bottom">Stays in Finland</h2>
-                {properties ? (<div style={{ whiteSpace: "nowrap" }}>
-                  {properties.length < 12 ? properties.length : "12+"} stays
+                {filteredProperties ? (<div style={{ whiteSpace: "nowrap" }}>
+                  {filteredProperties.length < 12 ? filteredProperties.length : "12+"} stays
                 </div>) : ''}
               </div>
-              {properties ? <Properties properties={properties} city={city} limit={guests} /> : ''}
+              {filteredProperties ? <Properties properties={filteredProperties} /> : ''}
             </Section>
           </Main>
           <Copyright />
