@@ -3,7 +3,7 @@ import React from "react"
 import styled from "styled-components"
 
 const PropertyWrapper = styled.div`
-  background-color: #222;
+  background-color: #eee;
   font-size: 1rem;
   color: white;
   border-radius: 10px;
@@ -78,23 +78,25 @@ const Property = ({ property }) => {
   const imageUrl = property ? property.photo : "";
   const beds = property.beds ? ` • ${property.beds} bed${property.beds === 1 ? '' : 's'}` : ''
   return (
-    <div
-      key={`property_${property.id}`}
-    >
-      <PropertyWrapper image={imageUrl}>
+    <div key={`property_${property.id}`}>
+      <PropertyWrapper>
+        <img src={imageUrl} alt="" data-uk-cover />
         {/* <div>
           <Title>{property.title}</Title>
         </div> */}
       </PropertyWrapper>
       <div className="uk-flex uk-flex-middle">
-        <div>
-          {property.superHost ? <SuperHost>Super Host</SuperHost> : ''}
-        </div>
+        <div>{property.superHost ? <SuperHost>Super Host</SuperHost> : ""}</div>
         <div className="uk-flex-auto">
-          <Type>{property.type}<Beds>{beds}</Beds></Type>
+          <Type>
+            {property.type}
+            <Beds>{beds}</Beds>
+          </Type>
         </div>
         <div>
-          <Rating><span uk-icon="star" /> {property.rating}</Rating>
+          <Rating>
+            <span uk-icon="star" /> {property.rating}
+          </Rating>
         </div>
       </div>
       <p>{property.title}.</p>
