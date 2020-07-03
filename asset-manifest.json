@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/windbnb/static/css/main.f2a3e309.chunk.css",
+    "main.js": "/windbnb/static/js/main.ff090b91.chunk.js",
+    "main.js.map": "/windbnb/static/js/main.ff090b91.chunk.js.map",
+    "runtime-main.js": "/windbnb/static/js/runtime-main.cc1ec942.js",
+    "runtime-main.js.map": "/windbnb/static/js/runtime-main.cc1ec942.js.map",
+    "static/js/2.89e699f1.chunk.js": "/windbnb/static/js/2.89e699f1.chunk.js",
+    "static/js/2.89e699f1.chunk.js.map": "/windbnb/static/js/2.89e699f1.chunk.js.map",
+    "index.html": "/windbnb/index.html",
+    "precache-manifest.f5b2c6ff37957eebbc009aca5aeb1f33.js": "/windbnb/precache-manifest.f5b2c6ff37957eebbc009aca5aeb1f33.js",
+    "service-worker.js": "/windbnb/service-worker.js",
+    "static/css/main.f2a3e309.chunk.css.map": "/windbnb/static/css/main.f2a3e309.chunk.css.map",
+    "static/js/2.89e699f1.chunk.js.LICENSE.txt": "/windbnb/static/js/2.89e699f1.chunk.js.LICENSE.txt",
+    "static/media/logo.54ee1f4a.svg": "/windbnb/static/media/logo.54ee1f4a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cc1ec942.js",
+    "static/js/2.89e699f1.chunk.js",
+    "static/css/main.f2a3e309.chunk.css",
+    "static/js/main.ff090b91.chunk.js"
+  ]
+}
