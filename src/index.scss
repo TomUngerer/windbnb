@@ -1,0 +1,93 @@
+@import url("https://use.typekit.net/ukz6mlr.css");
+
+// 1. Your custom variables and variable overwrites.
+// $global-background: #d6caaf;
+$global-color: #222;
+$global-muted-color: #333;
+$global-primary-color: rgb(235, 87, 87);
+// $global-muted-background: #d6caaf;
+// $global-inverse-color: $global-background;
+$base-body-font-size: 18px;
+$global-emphasis-color: #000;
+$global-color: #111;
+$global-font-family: futura-pt, sans-serif;
+$base-body-font-family: futura-pt, sans-serif;
+// $base-heading-font-family: bely, sans-serif;
+$base-heading-font-weight: bold;
+$global-primary-background: rgb(235, 87, 87);
+$section-primary-color-mode: none;
+$global-secondary-background: #000;
+$subnav-item-font-size: inherit;
+$global-link-color: $global-primary-background;
+$global-link-hover-color: darken($global-link-color, 30%);
+
+// 2. Import default variables and available mixins.
+@import "./variables-theme";
+@import "uikit/src/scss/mixins-theme";
+
+// 3. Your custom mixin overwrites.
+@mixin hook-card() {
+  color: #000;
+}
+
+// 4. Import UIkit.
+@import "uikit/src/scss/uikit-theme";
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+pre {
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+// external dependency fixes
+.hljs{
+  padding: 1.5rem;
+}
+
+.efaGep {
+  color: currentColor !important;
+}
+
+
+.App{
+  background-color: #eee;
+  // padding: .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  & > div {
+    overflow: hidden;
+    margin: 1rem;
+    border-radius: 20px;
+    background-color: white;
+    flex-grow: 1;
+    box-shadow: 0 0 10px rgba(black, .1);
+  }
+}
+
+
+.uk-icon-button{
+  background: $global-link-color;
+  color: white;
+  &:hover,
+  &:focus{
+  background: $global-link-hover-color;
+  color: white;
+  }
+}
