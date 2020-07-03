@@ -1,5 +1,6 @@
 {
   "name": "frontend",
+  "homepage": "https://tomungerer.github.io/windbnb",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
